@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════════════
+   Student Management System – Custom Stylesheet
+   ═══════════════════════════════════════════════════ */
+
+/* ── CSS Variables ────────────────────────────────── */
+:root {
+    --sms-primary:     #313042;
+    --sms-primary-dk:  #7f78e6;
+    --sms-sidebar-w:   240px;
+    --sms-navbar-h:    60px;
+    --sms-bg:          #f1f5f9;
+    --sms-card-bg:     #ffffff;
+    --sms-text:        #1e293b;
+    --sms-muted:       #64748b;
+    --sms-border:      #e2e8f0;
+    --sms-sidebar-bg:  #313042;
+    --sms-sidebar-txt: rgba(255,255,255,0.75);
+    --sms-sidebar-act: #ffffff;
+    --transition:      0.25s ease;
+}
+
+/* ── Dark Mode ────────────────────────────────────── */
+body.dark-mode {
+    --sms-bg:       #000000;
+    --sms-card-bg:  #1e293b;
+    --sms-text:     #e2e8f0;
+    --sms-muted:    #94a3b8;
+    --sms-border:   #334155;
+}
+body.dark-mode .table { color: var(--sms-text); }
+body.dark-mode .table-light th { background-color: #1e293b; color: #e2e8f0; }
+body.dark-mode .card { background-color: var(--sms-card-bg); border-color: var(--sms-border) !important; }
+body.dark-mode .form-control,
+body.dark-mode .form-select { background-color: #0f172a; color: #e2e8f0; border-color: #334155; }
+body.dark-mode .card-footer { background-color: var(--sms-card-bg) !important; }
+
+/* ── Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--sms-bg);
+    color: var(--sms-text);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+/* ── Navbar ───────────────────────────────────────── */
+.sms-navbar {
+    height: var(--sms-navbar-h);
+    background: linear-gradient(135deg, var(--sms-primary) 0%, var(--sms-primary-dk) 100%);
+    box-shadow: 0 2px 16px rgba(79,70,229,.25);
+    z-index: 1050;
+}
+
+/* ── Layout Wrapper ───────────────────────────────── */
+.sms-wrapper {
+    display: flex;
+    padding-top: var(--sms-navbar-h);
+    min-height: 100vh;
+}
+
+/* ── Sidebar ──────────────────────────────────────── */
+.sms-sidebar {
+    width: var(--sms-sidebar-w);
+    background: var(--sms-sidebar-bg);
+    flex-shrink: 0;
+    position: fixed;
+    top: var(--sms-navbar-h);
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1040;
+    transition: transform var(--transition);
+}
+
+.sms-sidebar .nav-link {
+    color: var(--sms-sidebar-txt);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    transition: background var(--transition), color var(--transition);
+}
+.sms-sidebar .nav-link i { font-size: 1.1rem; }
+.sms-sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: var(--sms-sidebar-act);
+}
+.sms-sidebar .nav-link.active {
+    background: linear-gradient(90deg, var(--sms-primary) 0%, rgba(79,70,229,.6) 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border-left: 4px solid #818cf8;
+}
+
+/* ── Main Content ─────────────────────────────────── */
+.sms-content {
+    margin-left: var(--sms-sidebar-w);
+    flex: 1;
+    min-width: 0;
+}
+
+/* ── Stat Cards ───────────────────────────────────── */
+.stat-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,.14); }
+
+.stat-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.stat-info p { margin: 0; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; opacity: .85; }
+.stat-info h3 { margin: 0; font-size: 2rem; font-weight: 700; }
+
+/* Blue */
+.stat-card--blue { background: linear-gradient(135deg, #d2bfbf 0%, #6366f1 100%); color: #fff; }
+.stat-card--blue .stat-icon { background: rgba(255,255,255,.2); color: #fff; }
+
+/* Green */
+.stat-card--green { background: linear-gradient(135deg, #43aa89 0%, #10b981 100%); color: #fff; }
+.stat-card--green .stat-icon { background: rgba(255,255,255,.2); color: #fff; }
+
+/* Red */
+.stat-card--red { background: linear-gradient(135deg, #ff9999 0%, #ef4444 100%); color: #fff; }
+.stat-card--red .stat-icon { background: rgba(255,255,255,.2); color: #fff; }
+
+/* Purple */
+.stat-card--purple { background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); color: #fff; }
+.stat-card--purple .stat-icon { background: rgba(255,255,255,.2); color: #fff; }
+
+/* ── Cards ────────────────────────────────────────── */
+.card { transition: box-shadow var(--transition); }
+.card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1) !important; }
+
+/* ── Tables ───────────────────────────────────────── */
+.table th { font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+.table td { vertical-align: middle; }
+.sortable { cursor: pointer; user-select: none; }
+.sortable:hover { background-color: rgba(79,70,229,.06); }
+
+/* ── Badges ───────────────────────────────────────── */
+.badge-status { padding: .35em .7em; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+.badge-active   { background: #dcfce7; color: #166534; }
+.badge-inactive { background: #fee2e2; color: #991b1b; }
+.badge-suspended { background: #fef9c3; color: #854d0e; }
+
+/* ── Modal ────────────────────────────────────────── */
+.sms-modal-header {
+    background: linear-gradient(135deg, var(--sms-primary) 0%, var(--sms-primary-dk) 100%);
+    border-radius: calc(0.5rem - 1px) calc(0.5rem - 1px) 0 0;
+}
+
+/* ── Toast ────────────────────────────────────────── */
+.toast.bg-success { background-color: #059669 !important; }
+.toast.bg-danger  { background-color: #dc2626 !important; }
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn-primary { background: var(--sms-primary); border-color: var(--sms-primary); }
+.btn-primary:hover { background: var(--sms-primary-dk); border-color: var(--sms-primary-dk); }
+
+/* ── Action Buttons in Table ──────────────────────── */
+.btn-action { width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; border: none; cursor: pointer; transition: transform .15s; }
+.btn-action:hover { transform: scale(1.15); }
+.btn-view   { background: #dbeafe; color: #1d4ed8; }
+.btn-edit   { background: #d1fae5; color: #065f46; }
+.btn-delete { background: #fee2e2; color: #991b1b; }
+
+/* ── Pagination ───────────────────────────────────── */
+.page-link { color: var(--sms-primary); border-radius: 6px !important; margin: 0 2px; }
+.page-item.active .page-link { background: var(--sms-primary); border-color: var(--sms-primary); }
+
+/* ── Forms ────────────────────────────────────────── */
+.form-control:focus, .form-select:focus {
+    border-color: var(--sms-primary);
+    box-shadow: 0 0 0 3px rgba(79,70,229,.15);
+}
+
+/* ── Student Details Grid ─────────────────────────── */
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.detail-item label { font-size: .75rem; font-weight: 600; text-transform: uppercase; color: var(--sms-muted); margin-bottom: .2rem; display: block; }
+.detail-item p { font-weight: 500; margin: 0; }
+
+/* ── Loading Spinner Overlay ──────────────────────── */
+.spinner-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,.7);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: inherit;
+    z-index: 10;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+    .sms-sidebar {
+        transform: translateX(-100%);
+        width: 200px;
+    }
+    .sms-sidebar.open { transform: translateX(0); }
+    .sms-content { margin-left: 0; }
+}
+
+@media print {
+    .sms-navbar, .sms-sidebar, .btn, nav[aria-label="Page navigation"] { display: none !important; }
+    .sms-content { margin-left: 0; }
+}

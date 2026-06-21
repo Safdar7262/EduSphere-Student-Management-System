@@ -1,0 +1,14 @@
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\dto\DashboardStats.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\StudentManagementApplication.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\dto\StudentRequest.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\service\StudentService.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\entity\Student.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\exception\GlobalExceptionHandler.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\config\CorsConfig.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\service\impl\StudentServiceImpl.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\exception\StudentNotFoundException.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\controller\StudentController.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\exception\DuplicateEmailException.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\repository\StudentRepository.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\dto\StudentResponse.java
+C:\Users\Dell\Desktop\student-management-system\backend\src\main\java\com\student\dto\ApiResponse.java

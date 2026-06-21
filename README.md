@@ -183,7 +183,7 @@ DEL  http://localhost:8080/api/students/1
 
 ---
 
-## ✨ Features
+##  Features
 
 - ✅ Full CRUD (Create, Read, Update, Delete)
 - ✅ Dashboard with live statistics
